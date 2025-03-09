@@ -34,3 +34,46 @@ class Phone {
     }
 }
 let phoneDetails = new Phone("Samsung", 4, 12000);
+// Public & Private Access MOdifier
+// =======================================
+class bottleMaker {
+    constructor(name) {
+        this.name = name;
+        this.halua = "halua";
+    }
+}
+class MetaBottleMaker extends bottleMaker {
+    constructor(name) {
+        super(name);
+    }
+    getValue() {
+        console.log(this.name, this.halua); //here if you make the public to private we cann't access the private value outside off the class 
+    }
+}
+let b1 = new bottleMaker("tasinBottles");
+// ReadOnly
+// ===============
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+    changeName() {
+        this.name = "Helloow"; //Cannot assign to 'name' because it is a read-only property.
+    }
+}
+let ul = new User("Tasin");
+// *Getters and setters
+// ============================
+class User2 {
+    constructor(_name, age) {
+        this._name = _name;
+        this.age = age;
+    }
+    get name1() {
+        return this._name;
+    }
+    set name1(value) {
+        this._name = value;
+    }
+}
+let value = new User2("tasin", 18);
